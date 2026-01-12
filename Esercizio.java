@@ -12,12 +12,12 @@ class Esercizio {
         --j;
         t = (0<= i && i<= 2 && 0<= j && j<= 2 && G[i][j].equals(s));
         if (t){
-            G[i][j] = 5;
+            G[i][j] = s;
         }
         return t;
     }
     //Azzero la griglia di gioco inserendo la stringa "-" in tutte le celle.
-    static void azzeraGriglia(Strig [][]G , int r , it c) {
+    static void azzeraGriglia(String [][]G , int r , int c) {
         int i = 0;
         while (i < r){
             int j = 0;
@@ -30,7 +30,7 @@ class Esercizio {
     }
     //Controlla se nella griglia c'è una vincita.
     // s può valore "O" oppure "X"
-    static boolean controllaVincita(Strig [][]G ,String s) {
+    static boolean controllaVincita(String [][]G ,String s) {
         boolean v = false;
         if ( G[0][0].equals(s) && G[0][1].equals(s) && G[0][2].equals(s) ) {
             v = true;
@@ -86,7 +86,7 @@ class Esercizio {
             do {
                 System.out.println("Giocatore "+s+", inserisci la tua mossa (riga e colonna [1-3]):");
                 mI = Integer.parseInt(input.nextLine());
-                mossaJ = Integer.parseInt(input.nextLine());
+                mJ = Integer.parseInt(input.nextLine());
                 mC = inserisciInGriglia(G, mI, mJ, s);
             } while( !(mC) );
             System.out.println("Griglia :");
